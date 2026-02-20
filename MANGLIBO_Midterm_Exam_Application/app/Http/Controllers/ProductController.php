@@ -15,13 +15,11 @@ class ProductController extends Controller
         ['title' => 'The Dark Knight', 'genre' => 'Action'],
     ];
 
-    // Show all products
     public function index()
     {
         return view('products', ['products' => $this->products]);
     }
 
-    // Show products by selected theme (genre)
     public function byTheme($theme)
     {
         $filtered = array_filter($this->products, function($product) use ($theme) {
